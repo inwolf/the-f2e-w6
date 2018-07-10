@@ -1,28 +1,23 @@
-<template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<template lang="pug">
+  #app
+    FormProgress(:step="progressStep")
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FormProgress from './components/FormProgress.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    FormProgress
+  },
+  data () {
+    return {
+      progressStep: 1
+    }
   }
 }
 </script>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style src="normalize.css/normalize.css"></style>
+<style lang="scss" src="@/assets/scss/all.scss"></style>

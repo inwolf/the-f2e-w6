@@ -1,0 +1,28 @@
+@import './variables';
+body {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 20px;
+  * {
+    box-sizing: border-box;
+  }
+}
+
+#app {
+  margin: 0 auto;
+  width: 460px;
+  border-top: 4px solid $color-primary;
+}
+
+.text-primary {
+  color: $color-primary;
+}
+
+.text-secondary {
+  color: $color-secondary;
+}
+
+.text-warning {
+  color: $color-warning;
+}
