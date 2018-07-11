@@ -38,6 +38,12 @@
 
 <script>
 export default {
+  props: {
+    accountData: {
+      type: Object,
+      required: true
+    }
+  },
   data () {
     return {
       account: '',
@@ -45,15 +51,18 @@ export default {
       confirmPassword: ''
     }
   },
+  created () {
+    this.account = this.accountData.account
+    this.password = this.accountData.password
+  },
   methods: {
     async submit () {
-      if (this.password !== this.confirmPassword) {
-        alert('not matched')
-        return
-      }
       const pass = await this.$validator.validate()
       if (pass) {
-        alert('submitted')
+        this.$emit('submitted', {
+          account: this.account,
+          password: this.password
+        })
       }
     }
   }

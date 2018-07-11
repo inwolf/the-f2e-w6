@@ -2,9 +2,9 @@
   #app
     FormProgress(:step="progressStep")
     .content
-      FormCreate(v-if="progressStep === 1", :create-data="createData")
-      p(v-else) Else step: {{ progressStep }}
-        button(@click="progressStep-1") back
+      FormCreate(v-if="progressStep === 1", :account-data="accountData", @submitted="accountSubmitted")
+      p(v-else) Step: {{ progressStep }}
+        button.btn(@click="progressStep--") back
 </template>
 
 <script>
@@ -19,7 +19,17 @@ export default {
   },
   data () {
     return {
-      progressStep: 1
+      progressStep: 1,
+      accountData: {
+        account: '',
+        password: ''
+      }
+    }
+  },
+  methods: {
+    accountSubmitted (val) {
+      this.accountData = val
+      this.progressStep++
     }
   }
 }
