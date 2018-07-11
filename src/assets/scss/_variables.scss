@@ -11,3 +11,37 @@ $color-warning: $orange;
 $color-black: $black;
 $color-white: $white;
 $color-gray: $gray;
+
+$font-family-base: 'Roboto', sans-serif;
+
+$border-radius-base: 8px;
+
+%font-base {
+  font-size: 20px;
+  font-weight: normal;
+  font-family: $font-family-base;
+}
+
+%font-title {
+  font-size: 48px;
+  font-weight: 300;
+  font-family: $font-family-base;
+  line-height: 57px;
+  margin: 0;
+}
+
+%font-subtitle {
+  @extend %font-title;
+  font-size: 24px;
+  line-height: 28px;
+  margin: 0;
+}
+
+%font-form {
+  @extend %font-base;
+}
+
+%font-label {
+  @extend %font-form;
+  font-size: 14px;
+}
