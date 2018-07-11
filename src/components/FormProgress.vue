@@ -20,9 +20,12 @@ export default {
 
 <style lang="scss" scoped>
   @import '@/assets/scss/_variables.scss';
+  .form-progress {
+    margin: 52px auto 40px;
+  }
   .progress {
     width: 240px;
-    margin: 52px auto 0;
+    margin: 0 auto;
     color: $color-secondary;
     font-size: 16px;
     .progress-step {
