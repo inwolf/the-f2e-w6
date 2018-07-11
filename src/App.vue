@@ -2,8 +2,9 @@
   #app
     FormProgress(:step="progressStep")
     .content
-      FormCreate(v-if="progressStep === 1")
+      FormCreate(v-if="progressStep === 1", :create-data="createData")
       p(v-else) Else step: {{ progressStep }}
+        button(@click="progressStep-1") back
 </template>
 
 <script>
