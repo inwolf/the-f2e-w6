@@ -5,6 +5,9 @@
       FormCreate(v-if="progressStep === 1", :account-data="accountData", @submitted="accountSubmitted")
       FormGeneral(v-else-if="progressStep === 2", :general-data="generalData", @submitted="generalSubmitted")
       p(v-else) Step: {{ progressStep }}
+        br
+        br
+        | In development...
         button.btn(@click="progressStep--") back
 </template>
 
