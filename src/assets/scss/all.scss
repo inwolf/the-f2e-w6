@@ -12,6 +12,7 @@ body {
   margin: 0 auto;
   width: 460px;
   border-top: 4px solid $color-primary;
+  padding-bottom: 20px;
 }
 
 .text-primary {
@@ -48,9 +49,14 @@ body {
 
 .form-group {
   position: relative;
+  margin-bottom: 24px;
   label {
     display: inline-block;
     margin-bottom: 8px;
+    small {
+      font-size: 80%;
+      font-weight: 300;
+    }
   }
   &.validate-error {
     .form-control {
@@ -93,6 +99,18 @@ body {
         border-color: transparent $color-warning transparent transparent;
       }
     }
+    &.left {
+      right: 103%;
+      &::before {
+        content: " ";
+        position: absolute;
+        left: 100%;
+        bottom: 7px;
+        border-width: 6px;
+        border-style: solid;
+        border-color: transparent transparent transparent $color-warning;
+      }
+    }
   }
 }
 
@@ -103,12 +121,11 @@ body {
   width: 100%;
   height: 52px;
   padding: 12px 20px;
-  margin-bottom: 24px;
   background: #FFFFFF;
   border: 2px solid #000000;
   border-radius: $border-radius-base;
   &::placeholder {
-    color: #999999;
+    color: $color-placeholder;
   }
   &:focus {
     outline: none;
@@ -144,4 +161,34 @@ body {
 
 .form-title {
   margin-bottom: 24px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  > .form-group,
+  > .form-control {
+    margin-left: 10px;
+    margin-right: 10px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+select.form-control {
+  padding-left: 0;
+  text-indent: 12px;
+  option[disabled] {
+    display: none;
+  }
+}
+
+.text-placeholder {
+  color: $color-placeholder;
 }
