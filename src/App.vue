@@ -22,7 +22,7 @@ export default {
   },
   data () {
     return {
-      progressStep: 2,
+      progressStep: 1,
       accountData: {
         account: '',
         password: ''
